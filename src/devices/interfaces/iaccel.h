@@ -21,4 +21,3 @@ namespace kvadro::device::Accel
     };
 }
 
-#endif //KVADRO_ACCEL_H

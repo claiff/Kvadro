@@ -20,5 +20,3 @@ namespace kvadro::device
     {
     };
 }
-
-#endif //KVADRO_GPRS_H
