@@ -13,11 +13,31 @@ abstract class IAccel
 */
 #pragma once
 
-namespace kvadro::device::Accel
-{
-    class IAccel
-    {
+#include "../../periphery/interface/ii2c.hpp"
 
-    };
+enum class ACCEL_MODE
+{
+  LOW,
+  MEDDIUM,
+  HIGH
+};
+
+namespace kvadro::device::accel
+{
+
+class IAccel
+{
+public:
+  explicit IAccel(periphery::interface::I2CPtr i2c);
+  [[nodiscard]] virtual bool IsAccelOnline() const noexcept = 0;
+  [[nodiscard]] virtual bool SetAccelMode(ACCEL_MODE mode) const noexcept = 0;
+protected:
+  void ReadData(uint8_t address, uint8_t reg, uint8_t* buffer, uint8_t count) const noexcept;
+  void WriteData(uint8_t address, uint8_t reg, uint8_t* buffer, uint8_t count) const noexcept;
+private:
+  periphery::interface::I2CPtr mI2c;
+};
+
+using IAccelPtr = std::shared_ptr<IAccel>;
 }
 

@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "interface/ircc.h"
+#include "../interface/ircc.hpp"
 
 namespace kvadro::periphery
 {

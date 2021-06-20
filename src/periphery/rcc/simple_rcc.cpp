@@ -2,7 +2,7 @@
 // Created by claiff on 6/12/21.
 //
 
-#include "simple_rcc.h"
+#include "simple_rcc.hpp"
 
 namespace kvadro::periphery
 {

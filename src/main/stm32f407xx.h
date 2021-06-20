@@ -9101,7 +9101,7 @@ typedef struct
 /*******************  Bit definition for I2C_CR1 register  ********************/
 #define I2C_CR1_PE_Pos            (0U)                                         
 #define I2C_CR1_PE_Msk            (0x1UL << I2C_CR1_PE_Pos)                     /*!< 0x00000001 */
-#define I2C_CR1_PE                I2C_CR1_PE_Msk                               /*!<Peripheral Enable                             */
+  #define I2C_CR1_PE                I2C_CR1_PE_Msk                               /*!<Peripheral Enable                             */
 #define I2C_CR1_SMBUS_Pos         (1U)                                         
 #define I2C_CR1_SMBUS_Msk         (0x1UL << I2C_CR1_SMBUS_Pos)                  /*!< 0x00000002 */
 #define I2C_CR1_SMBUS             I2C_CR1_SMBUS_Msk                            /*!<SMBus Mode                                    */
