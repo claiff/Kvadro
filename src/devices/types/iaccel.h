@@ -13,7 +13,7 @@ abstract class IAccel
 */
 #pragma once
 
-#include "../../periphery/interface/ii2c.hpp"
+#include "../../periphery/types/ii2c.hpp"
 
 enum class ACCEL_MODE
 {

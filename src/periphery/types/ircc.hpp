@@ -44,6 +44,10 @@ public:
   {
     RCC->APB1ENR |= RCC_APB1ENR_I2C3EN;
   }
+  virtual void SetGpioUart1Clock() const noexcept
+  {
+    RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+  }
 };
 using IRCC_Ptr = std::shared_ptr<IRCC>;
 }

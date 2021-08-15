@@ -6,12 +6,11 @@
 
 namespace kvadro::periphery::gpio::mode
 {
-
-void InputMode::SetMode(GPIO_TypeDef *gpio, uint16_t pin) noexcept
-{
   static const int INPUT_MODE = 0x00;
-  mMode = INPUT_MODE;
-  GpioMode::SetMode(gpio, pin);
-}
+
+  InputMode::InputMode() :
+	  interface::gpio::GpioMode( INPUT_MODE )
+  {
+  }
 
 }

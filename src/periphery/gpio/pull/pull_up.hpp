@@ -1,7 +1,7 @@
 //
 // Created by claiff on 6/13/21.
 //
-#include "../../interface/gpio/gpio_pull.hpp"
+#include "../../types/gpio/gpio_pull.hpp"
 
 #pragma once
 

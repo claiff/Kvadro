@@ -9,7 +9,9 @@
 
 namespace kvadro::periphery::interface
 {
+  static const int FUNC_BITS_SYS = 0x00;
   static const int FUNC_BITS_I2C = 0x04;
+  static const int FUNC_BITS_UART = 0x07;
 
   class PeripheryInit
   {

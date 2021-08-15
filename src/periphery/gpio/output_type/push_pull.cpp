@@ -6,12 +6,15 @@
 
 namespace kvadro::periphery::gpio::output_type
 {
-
-void PushPullType::SetOutputType(GPIO_TypeDef *gpio, uint8_t pin) noexcept
-{
   const int PUSH_PULL_TYPE = 0x00;
-  mOutputType = PUSH_PULL_TYPE;
-  GpioOutputType::SetOutputType(gpio, pin);
-}
+  PushPullType::PushPullType() :
+	  periphery::interface::gpio::GpioOutputType( PUSH_PULL_TYPE )
+  {
+
+  }
+  void PushPullType::SetOutputType( GPIO_TypeDef *gpio, uint16_t group_pins ) noexcept
+  {
+	GpioOutputType::SetOutputType( gpio, group_pins );
+  }
 
 }

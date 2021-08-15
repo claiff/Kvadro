@@ -1,7 +1,7 @@
 //
 // Created by claiff on 6/13/21.
 //
-#include "../../interface/gpio/gpio_speed.hpp"
+#include "../../types/gpio/gpio_speed.hpp"
 
 #pragma once
 

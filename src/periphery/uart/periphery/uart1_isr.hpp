@@ -8,14 +8,14 @@
 #include "../../types/ircc.hpp"
 #include "../../types/periphery_init.h"
 
-namespace kvadro::periphery::i2c
+namespace kvadro::periphery::uart
 {
 
-class I2C2Periphery : public interface::PeripheryInit
+class UART1_ISR : public interface::PeripheryInit
 {
 public:
-  explicit I2C2Periphery(interface::IRCC_Ptr rcc);
-  ~I2C2Periphery() override = default;
+  explicit UART1_ISR( interface::IRCC_Ptr const& rcc);
+  ~UART1_ISR() override = default;
 
   void InitPeriphery() const noexcept override;
 

@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "../interface/ii2c.hpp"
-#include "../interface/periphery_init.h"
-#include "../interface/ircc.hpp"
+#include "../types/ii2c.hpp"
+#include "../types/periphery_init.h"
+#include "../types/ircc.hpp"
 
 namespace kvadro::periphery::i2c
 {

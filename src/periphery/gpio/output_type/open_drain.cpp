@@ -6,11 +6,11 @@
 
 namespace kvadro::periphery::gpio::output_type
 {
-
-void OpenDrainType::SetOutputType(GPIO_TypeDef *gpio, uint8_t pin) noexcept
-{
   static const int OPEN_DRAIN_TYPE = 0x01;
-  mOutputType = OPEN_DRAIN_TYPE;
-  GpioOutputType::SetOutputType(gpio, pin);
-}
+  OpenDrainType::OpenDrainType() :
+	  periphery::interface::gpio::GpioOutputType( OPEN_DRAIN_TYPE )
+  {
+
+  }
+
 }

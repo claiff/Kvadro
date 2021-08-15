@@ -5,8 +5,8 @@
 #pragma once
 
 #include "../../gpio/gpio_init.hpp"
-#include "../../interface/ircc.hpp"
-#include "../../interface/periphery_init.h"
+#include "../../types/ircc.hpp"
+#include "../../types/periphery_init.h"
 
 namespace kvadro::periphery::i2c
 {

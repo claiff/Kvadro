@@ -3,18 +3,18 @@
 #include "../periphery/i2c/i2c_max_speed.hpp"
 #include "../periphery/rcc/simple_rcc.hpp"
 #include "memory"
+#include "../periphery/uart/uart_gprs.hpp"
 #include "../devices/accel/lsm9ds0.hpp"
 
 int main()
 {
   auto clock_control = std::make_shared<kvadro::periphery::SimpleRCC>();
   clock_control->SetDefaultRCC();
-  auto i2c = std::make_shared<kvadro::periphery::i2c::I2cMaxSpeed>(I2C1, clock_control);
-
-  auto lsm = std::make_shared<kvadro::device::accel::LSM9DS0>(i2c);
-  lsm->IsAccelOnline();
+auto uart = std::make_shared<kvadro::periphery::uart::UART_GPRS>(USART1, clock_control);
   while (1)
   {
 
   }
 }
+
+

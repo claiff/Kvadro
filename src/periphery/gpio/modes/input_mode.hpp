@@ -4,18 +4,16 @@
 
 #pragma once
 
-#include "../../interface/gpio/gpio_mode.hpp"
+#include "../../types/gpio/gpio_mode.hpp"
 
 namespace kvadro::periphery::gpio::mode
 {
 
-class InputMode : public periphery::interface::gpio::GpioMode
-{
-public:
-  InputMode() = default;
-  ~InputMode() override = default;
-
-  void SetMode(GPIO_TypeDef *gpio, uint16_t pin) noexcept override;
-};
+  class InputMode : public interface::gpio::GpioMode
+  {
+  public:
+	InputMode();
+	~InputMode() override = default;
+  };
 
 }

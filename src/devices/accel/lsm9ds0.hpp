@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "../interfaces/iaccel.h"
+#include "../types/iaccel.h"
 
 
 static const uint8_t MAGN_ADDRESS = 0x3B;
