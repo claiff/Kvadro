@@ -13,7 +13,6 @@ int main()
 
   auto lsm = std::make_shared<kvadro::device::accel::LSM9DS0>(i2c);
   lsm->IsAccelOnline();
-  //auto lsm = new kvadro::device::accel::LSM9DS0(i2c);
   while (1)
   {
 

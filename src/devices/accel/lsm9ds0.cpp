@@ -60,7 +60,8 @@ void LSM9DS0::SetReg2(ACCEL_MODE mode) const noexcept
   }
 }
 
-void LSM9DS0::SetReg4(ACCEL_MODE mode) const noexcept {
+void LSM9DS0::SetReg4(ACCEL_MODE mode) const noexcept
+{
   uint8_t reg_data = 0;
   reg_data |= BLE;
   switch (mode) {
