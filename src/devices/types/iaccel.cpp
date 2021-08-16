@@ -2,11 +2,11 @@
 // Created by claiff on 6/10/21.
 //
 
-#include "iaccel.h"
+#include "iaccel.hpp"
 
 namespace kvadro::device::accel
 {
-  IAccel::IAccel(periphery::interface::I2CPtr i2c):mI2c(std::move(i2c)){}
+  IAccel::IAccel(periphery::types::I2CPtr i2c):mI2c(std::move(i2c)){}
 
 void IAccel::ReadData(uint8_t address, uint8_t reg, uint8_t *buffer, uint8_t count) const noexcept
 {

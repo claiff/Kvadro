@@ -3,12 +3,13 @@
 //
 
 #include "alternative_mode.hpp"
+
 namespace kvadro::periphery::gpio::mode
 {
   const int ALTERNATIVE_MODE = 0x02;
 
   AlternativeMode::AlternativeMode() :
-	  interface::gpio::GpioMode( ALTERNATIVE_MODE )
+	  types::gpio::GpioMode( ALTERNATIVE_MODE )
   {
 
   }

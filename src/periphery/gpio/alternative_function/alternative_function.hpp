@@ -4,12 +4,14 @@
 
 #pragma once
 
-#include "../../types/gpio/gpio_general.hpp"
-#include "memory"
+#include <memory>
+
+#include "periphery/types/gpio/gpio_general.hpp"
+
 namespace kvadro::periphery::gpio::alternative_func
 {
 
-  class AlternativeFunction : public interface::gpio::GpioGeneral
+  class AlternativeFunction : public types::gpio::GpioGeneral
   {
   public:
 	explicit AlternativeFunction( uint8_t function );

@@ -4,10 +4,11 @@
 
 #pragma once
 
-#include "../../../main/stm32f407xx.h"
-#include "memory"
+#include <memory>
 
-namespace kvadro::periphery::interface
+#include "main/stm32f407xx.h"
+
+namespace kvadro::periphery::types
 {
   class GpioMode
   {

@@ -1,14 +1,14 @@
 //
 // Created by claiff on 6/13/21.
 //
-#include "../../types/gpio/gpio_pull.hpp"
-
 #pragma once
+
+#include "periphery/types/gpio/gpio_pull.hpp"
 
 namespace kvadro::periphery::gpio::pull
 {
 
-class PullUp : public periphery::interface::gpio::GpioPull
+  class PullUp : public periphery::types::gpio::GpioPull
 {
 public:
   PullUp() = default;

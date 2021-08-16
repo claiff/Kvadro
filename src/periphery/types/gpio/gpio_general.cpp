@@ -3,7 +3,7 @@
 //
 #include "gpio_general.hpp"
 
-namespace kvadro::periphery::interface::gpio
+namespace kvadro::periphery::types::gpio
 {
   bool GpioGeneral::IsActivePin( uint16_t pin, uint8_t chosen_pin )
   {

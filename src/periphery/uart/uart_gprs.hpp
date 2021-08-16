@@ -4,22 +4,23 @@
 
 #pragma once
 
-#include "../../main/stm32f407xx.h"
-#include "../types/ircc.hpp"
-#include "../types/periphery_init.h"
+#include "main/stm32f407xx.h"
+#include "periphery/types/ircc.hpp"
+#include "periphery/types/periphery_init.h"
+
 namespace kvadro::periphery::uart
 {
   class UART_GPRS final
   {
   public:
-	UART_GPRS( USART_TypeDef *uart, kvadro::periphery::interface::IRCC_Ptr const& rcc );
+	UART_GPRS( USART_TypeDef *uart, kvadro::periphery::types::IRCC_Ptr const& rcc );
   private:
 	void InitPeriphery();
 	void InitUART();
 
 	USART_TypeDef *mUart;
-	interface::IRCC_Ptr mRcc;
-	interface::PeripheryInitPtr mPeripheryInit;
+	types::IRCC_Ptr mRcc;
+	types::PeripheryInitPtr mPeripheryInit;
 
   };
 }

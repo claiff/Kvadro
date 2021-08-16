@@ -8,10 +8,10 @@ namespace kvadro::periphery::gpio
 
   void GpioInit::SetGpio( GPIO_TypeDef *gpio,
 						  uint16_t group_pins,
-						  const interface::gpio::GPIO_ModePtr& gpio_mode,
-						  const interface::gpio::GpioOutputTypePtr& output_type,
-						  const interface::gpio::GpioPullPtr& pull,
-						  const interface::gpio::GpioSpeedPtr& speed,
+						  const types::gpio::GPIO_ModePtr& gpio_mode,
+						  const types::gpio::GpioOutputTypePtr& output_type,
+						  const types::gpio::GpioPullPtr& pull,
+						  const types::gpio::GpioSpeedPtr& speed,
 						  alternative_func::AlternativeFunctionPtr const& func ) const noexcept
   {
 	gpio_mode->SetMode( gpio, group_pins );

@@ -7,7 +7,7 @@
 #include "memory"
 #include "../../main/stm32f407xx.h"
 
-namespace kvadro::periphery::interface
+namespace kvadro::periphery::types
 {
   static const int FUNC_BITS_SYS = 0x00;
   static const int FUNC_BITS_I2C = 0x04;
@@ -16,8 +16,8 @@ namespace kvadro::periphery::interface
   class PeripheryInit
   {
   public:
-    virtual ~PeripheryInit() = default;
-    virtual void InitPeriphery() const noexcept = 0;
+	virtual ~PeripheryInit() = default;
+	virtual void InitPeriphery() const noexcept = 0;
   };
   using PeripheryInitPtr = std::shared_ptr<PeripheryInit>;
 }

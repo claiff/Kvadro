@@ -4,23 +4,23 @@
 
 #pragma once
 
-#include "../../gpio/gpio_init.hpp"
-#include "../../types/ircc.hpp"
-#include "../../types/periphery_init.h"
+#include "periphery/gpio/gpio_init.hpp"
+#include "periphery/types/ircc.hpp"
+#include "periphery/types/periphery_init.h"
 
 namespace kvadro::periphery::i2c
 {
 
-class I2C2Periphery : public interface::PeripheryInit
+class I2C2Periphery : public types::PeripheryInit
 {
 public:
-  explicit I2C2Periphery(interface::IRCC_Ptr rcc);
+  explicit I2C2Periphery(types::IRCC_Ptr rcc);
   ~I2C2Periphery() override = default;
 
   void InitPeriphery() const noexcept override;
 
 private:
-  interface::IRCC_Ptr mRcc;
+  types::IRCC_Ptr mRcc;
   gpio::GpioInit mGpioInit;
 };
 

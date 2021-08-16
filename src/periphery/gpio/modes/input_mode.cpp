@@ -9,7 +9,7 @@ namespace kvadro::periphery::gpio::mode
   static const int INPUT_MODE = 0x00;
 
   InputMode::InputMode() :
-	  interface::gpio::GpioMode( INPUT_MODE )
+	  types::gpio::GpioMode( INPUT_MODE )
   {
   }
 

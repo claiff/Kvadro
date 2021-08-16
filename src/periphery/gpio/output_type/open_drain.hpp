@@ -1,14 +1,14 @@
 //
 // Created by claiff on 6/13/21.
 //
-#include "../../types/gpio/gpio_output_type.hpp"
-
 #pragma once
+
+#include "periphery/types/gpio/gpio_output_type.hpp"
 
 namespace kvadro::periphery::gpio::output_type
 {
 
-  class OpenDrainType : public periphery::interface::gpio::GpioOutputType
+  class OpenDrainType : public periphery::types::gpio::GpioOutputType
   {
   public:
 	OpenDrainType();

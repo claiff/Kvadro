@@ -4,15 +4,17 @@
 
 #pragma once
 
+#include <memory>
+
 #include "gpio_general.hpp"
-#include "memory"
-namespace kvadro::periphery::interface::gpio
+
+namespace kvadro::periphery::types::gpio
 {
   class GpioOutputType : public GpioGeneral
   {
   public:
 	explicit GpioOutputType( uint8_t output_type );
-	virtual ~GpioOutputType() = default;
+	~GpioOutputType() override = default;
 
 	virtual void SetOutputType( GPIO_TypeDef *gpio, uint16_t group_pins ) noexcept;
   private:

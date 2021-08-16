@@ -4,7 +4,7 @@
 
 #include "gpio_output_type.hpp"
 
-namespace kvadro::periphery::interface::gpio
+namespace kvadro::periphery::types::gpio
 {
   GpioOutputType::GpioOutputType( uint8_t output_type ) :
 	  mOutputType( output_type )

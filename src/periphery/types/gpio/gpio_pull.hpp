@@ -4,11 +4,12 @@
 
 #pragma once
 
-#include "gpio_general.hpp"
-#include "memory"
-namespace kvadro::periphery::interface::gpio
-{
+#include <memory>
 
+#include "gpio_general.hpp"
+
+namespace kvadro::periphery::types::gpio
+{
   class GpioPull : public GpioGeneral
   {
   public:

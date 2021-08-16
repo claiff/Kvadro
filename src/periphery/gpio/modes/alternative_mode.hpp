@@ -1,15 +1,15 @@
 //
 // Created by claiff on 6/13/21.
 //
-#include "../../types/gpio/gpio_afr.hpp"
-#include "../../types/gpio/gpio_mode.hpp"
-
 #pragma once
+
+#include "periphery/types/gpio/gpio_afr.hpp"
+#include "periphery/types/gpio/gpio_mode.hpp"
 
 namespace kvadro::periphery::gpio::mode
 {
 
-  class AlternativeMode : public interface::gpio::GpioMode
+  class AlternativeMode : public types::gpio::GpioMode
   {
   public:
 	AlternativeMode();

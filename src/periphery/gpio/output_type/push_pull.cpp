@@ -8,7 +8,7 @@ namespace kvadro::periphery::gpio::output_type
 {
   const int PUSH_PULL_TYPE = 0x00;
   PushPullType::PushPullType() :
-	  periphery::interface::gpio::GpioOutputType( PUSH_PULL_TYPE )
+	  periphery::types::gpio::GpioOutputType( PUSH_PULL_TYPE )
   {
 
   }

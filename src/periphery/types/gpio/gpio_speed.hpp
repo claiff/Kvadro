@@ -4,9 +4,11 @@
 
 #pragma once
 
+#include <memory>
+
 #include "gpio_general.hpp"
-#include "memory"
-namespace kvadro::periphery::interface::gpio
+
+namespace kvadro::periphery::types::gpio
 {
 
   class GpioSpeed : public GpioGeneral

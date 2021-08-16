@@ -12,7 +12,7 @@
 namespace kvadro::periphery::i2c
 {
 
-I2C1Periphery::I2C1Periphery(interface::IRCC_Ptr rcc)
+I2C1Periphery::I2C1Periphery(types::IRCC_Ptr rcc)
     : mRcc(std::move(rcc))
 {}
 
@@ -20,14 +20,14 @@ void I2C1Periphery::InitPeriphery() const noexcept
 {
   mRcc->SetGpioBClock();
   //TODO enum class uint16_t
-  auto pins = static_cast<uint16_t>(interface::gpio::GPIO_PIN::PIN6) + static_cast<uint16_t>(interface::gpio::GPIO_PIN::PIN7);
+  auto pins = static_cast<uint16_t>(types::gpio::GPIO_PIN::PIN6) + static_cast<uint16_t>(types::gpio::GPIO_PIN::PIN7);
   mGpioInit.SetGpio(GPIOB,
                     pins,
                     std::make_shared<gpio::mode::AlternativeMode>(),
                     std::make_shared<gpio::output_type::OpenDrainType>(),
                     std::make_shared<gpio::pull::PullUp>(),
                     std::make_shared<gpio::speed::VeryHighSpeed>(),
-                    std::make_shared<gpio::alternative_func::AlternativeFunction>(interface::FUNC_BITS_I2C));
+                    std::make_shared<gpio::alternative_func::AlternativeFunction>(types::FUNC_BITS_I2C));
 }
 
 }

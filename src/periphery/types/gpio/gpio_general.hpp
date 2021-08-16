@@ -3,11 +3,12 @@
 //
 #pragma once
 
-#include "../../../main/stm32f407xx.h"
+#include "main/stm32f407xx.h"
 
-namespace kvadro::periphery::interface::gpio
+namespace kvadro::periphery::types::gpio
 {
   const static uint8_t COUNT_PINS = 16;
+
   enum class GPIO_PIN : uint16_t
   {
 	PIN0 = 1 << 0,
@@ -27,9 +28,11 @@ namespace kvadro::periphery::interface::gpio
 	PIN14 = 1 << 14,
 	PIN15 = 1 << 15,
   };
+
   class GpioGeneral
   {
   public:
+	GpioGeneral() = default;
 	virtual ~GpioGeneral() = default;
   protected:
 	bool IsActivePin( uint16_t pin, uint8_t chosen_pin );

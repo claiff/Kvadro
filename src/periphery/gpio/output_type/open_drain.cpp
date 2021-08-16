@@ -8,7 +8,7 @@ namespace kvadro::periphery::gpio::output_type
 {
   static const int OPEN_DRAIN_TYPE = 0x01;
   OpenDrainType::OpenDrainType() :
-	  periphery::interface::gpio::GpioOutputType( OPEN_DRAIN_TYPE )
+	  periphery::types::gpio::GpioOutputType( OPEN_DRAIN_TYPE )
   {
 
   }

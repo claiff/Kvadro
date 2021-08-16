@@ -4,10 +4,11 @@
 
 #pragma once
 
-#include "gpio_general.hpp"
-#include "memory"
+#include <memory>
 
-namespace kvadro::periphery::interface::gpio
+#include "gpio_general.hpp"
+
+namespace kvadro::periphery::types::gpio
 {
   class GpioMode : public GpioGeneral
   {
@@ -16,7 +17,6 @@ namespace kvadro::periphery::interface::gpio
 	~GpioMode() override = default;
 
 	virtual void SetMode( GPIO_TypeDef *gpio, uint16_t pin ) noexcept;
-
   protected:
 	uint8_t mMode;
   };
