@@ -6,110 +6,121 @@
 
 namespace kvadro::periphery
 {
+  static int const DEFAULT_CLOCK = 168;
+
+  SimpleRCC::SimpleRCC() :
+	  mClock( DEFAULT_CLOCK )
+  {
+  }
+
   void SimpleRCC::SetDefaultRCC() const noexcept
   {
-    if(!InitHSE())
-    {
-      //TODO Error
-    }
-    if(!InitPLL())
-    {
-      //TODO Error
-    }
-    InitSW();
+	if( !InitHSE() )
+	{
+	  //TODO Error
+	}
+	if( !InitPLL() )
+	{
+	  //TODO Error
+	}
+	//InitSW();
   }
 
-bool SimpleRCC::InitHSE() noexcept
-{
+  bool SimpleRCC::InitHSE() noexcept
+  {
 //TODO add PWR
-  FLASH->ACR  = FLASH_ACR_LATENCY_5WS;
-  RCC->CR |= RCC_CR_HSEON;
+	FLASH->ACR = FLASH_ACR_LATENCY_5WS;
+	RCC->CR |= RCC_CR_HSEON;
 
-  if(!CheckRegister(&RCC->CR, RCC_CR_HSERDY))
-  {
-    return false;
+	if( !CheckRegister( &RCC->CR, RCC_CR_HSERDY ) )
+	{
+	  return false;
+	}
+
+	RCC->CFGR &= ~RCC_CFGR_SW;
+
+	if( !UnCheckRegister( &RCC->CFGR, RCC_CFGR_SWS ) )
+	{
+	  return false;
+	}
+
+	RCC->CR &= ~RCC_CR_PLLON;
+
+	if( !UnCheckRegister( &RCC->CR, RCC_CR_PLLRDY ) )
+	{
+	  return false;
+	}
+	return true;
   }
 
-  RCC->CFGR &=~ RCC_CFGR_SW;
-
-  if(!UnCheckRegister(&RCC->CFGR, RCC_CFGR_SWS))
+  bool SimpleRCC::InitPLL() noexcept
   {
-    return false;
+	static const uint8_t ZERO = 0x00;
+
+	RCC->PLLCFGR = ZERO;
+	RCC->PLLCFGR |= RCC_PLLCFGR_PLLQ_2;
+	RCC->PLLCFGR |= RCC_PLLCFGR_PLLM_2;
+	RCC->PLLCFGR |= ( RCC_PLLCFGR_PLLN_3 | RCC_PLLCFGR_PLLN_5 | RCC_PLLCFGR_PLLN_7 );
+	RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSE;
+	RCC->CR |= RCC_CR_PLLON;
+
+	if( !CheckRegister( &RCC->CR, RCC_CR_PLLRDY ) )
+	{
+	  return false;
+	}
+	return true;
   }
 
-  RCC->CR &=~ RCC_CR_PLLON;
-
-  if(!UnCheckRegister(&RCC->CR, RCC_CR_PLLRDY))
+  void SimpleRCC::InitSW() const noexcept
   {
-    return false;
+	static const uint8_t ZERO = 0x00;
+
+	RCC->CFGR = ZERO;
+	RCC->CFGR |= RCC_CFGR_PPRE1;
+	RCC->CFGR |= RCC_CFGR_PPRE2;
+	RCC->CFGR |= RCC_CFGR_SW_1;
+	RCC->CFGR &= ~RCC_CFGR_PPRE1_1;
+	RCC->CFGR &= ~( RCC_CFGR_PPRE2_0 | RCC_CFGR_PPRE2_1 );
+
+	RCC->CR &= ~RCC_CR_HSION;
   }
-  return true;
-}
 
-bool SimpleRCC::InitPLL() noexcept
-{
-  static const uint8_t ZERO = 0x00;
-
-  RCC->PLLCFGR = ZERO;
-  RCC->PLLCFGR |= RCC_PLLCFGR_PLLQ_2;
-  RCC->PLLCFGR |= RCC_PLLCFGR_PLLM_2;
-  RCC->PLLCFGR |= (RCC_PLLCFGR_PLLN_3 | RCC_PLLCFGR_PLLN_5 | RCC_PLLCFGR_PLLN_7);
-  RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSE;
-  RCC->CR |= RCC_CR_PLLON;
-
-  if(!CheckRegister(&RCC->CR, RCC_CR_PLLRDY))
+  bool SimpleRCC::CheckRegister( const volatile uint32_t *base_reg, uint32_t check_reg ) noexcept
   {
-    return false;
+	static const uint16_t TIMER_FULL = 0xFFFF;
+	volatile uint16_t timer = 0;
+
+	while( ( ( *base_reg & check_reg ) != check_reg ) && timer != TIMER_FULL )
+	{
+	  timer++;
+	}
+	if( timer == TIMER_FULL )
+	{
+	  return false;
+	  //TODO ERROR
+	}
+	return true;
   }
-  return true;
-}
 
-void SimpleRCC::InitSW()const noexcept
-{
-  static const uint8_t ZERO = 0x00;
-
-  RCC->CFGR = ZERO;
-  RCC->CFGR |= RCC_CFGR_PPRE1;
-  RCC->CFGR |= RCC_CFGR_PPRE2;
-  RCC->CFGR |= RCC_CFGR_SW_1;
-  RCC->CFGR &=~ RCC_CFGR_PPRE1_1;
-  RCC->CFGR &=~ (RCC_CFGR_PPRE2_0 | RCC_CFGR_PPRE2_1);
-
-  RCC->CR &=~ RCC_CR_HSION;
-}
-
-bool SimpleRCC::CheckRegister(const volatile uint32_t* base_reg, uint32_t check_reg) noexcept
-{
-  static const uint16_t TIMER_FULL = 0xFFFF;
-  volatile uint16_t timer = 0;
-
-  while(((*base_reg & check_reg) != check_reg) && timer != TIMER_FULL)
+  bool SimpleRCC::UnCheckRegister( const volatile uint32_t *base_reg, unsigned long check_reg ) noexcept
   {
-    timer++;
-  }
-  if(timer == TIMER_FULL)
-  {
-    return false;
-    //TODO ERROR
-  }
-  return true;
-}
+	static const uint8_t TIMER_FULL = 0xFF;
+	uint8_t timer = 0;
 
-bool SimpleRCC::UnCheckRegister(const volatile uint32_t* base_reg, unsigned long check_reg) noexcept
-{
-  static const uint8_t TIMER_FULL = 0xFF;
-  uint8_t timer = 0;
-
-  while(((*base_reg & check_reg) == check_reg) && timer != TIMER_FULL)
-  {
-    timer++;
+	while( ( ( *base_reg & check_reg ) == check_reg ) && timer != TIMER_FULL )
+	{
+	  timer++;
+	}
+	if( timer == TIMER_FULL )
+	{
+	  return false;
+	  //TODO ERROR
+	}
+	return true;
   }
-  if(timer == TIMER_FULL)
+  uint8_t SimpleRCC::GetClock() const noexcept
   {
-    return false;
-    //TODO ERROR
+	return mClock;
   }
-  return true;
-}
 
 }

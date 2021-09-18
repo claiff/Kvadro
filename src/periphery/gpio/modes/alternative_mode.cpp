@@ -6,7 +6,7 @@
 
 namespace kvadro::periphery::gpio::mode
 {
-  const int ALTERNATIVE_MODE = 0x02;
+  static const int ALTERNATIVE_MODE = 0x02;
 
   AlternativeMode::AlternativeMode() :
 	  types::gpio::GpioMode( ALTERNATIVE_MODE )

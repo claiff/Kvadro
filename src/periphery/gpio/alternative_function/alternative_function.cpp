@@ -17,7 +17,7 @@ namespace kvadro::periphery::gpio::alternative_func
 	const uint8_t AFR_BITS = 4;
 	uint32_t read_data = gpio->AFR[0];
 
-	for( uint8_t i = 0; i < types::gpio::COUNT_PINS / 2; ++i )
+	for( uint8_t i = 0; i < types::gpio::COUNT_PINS / 2 - 1; ++i )
 	{
 	  if( IsActivePin( pin, i ) )
 	  {
@@ -31,7 +31,8 @@ namespace kvadro::periphery::gpio::alternative_func
 	{
 	  if( IsActivePin( pin, i ) )
 	  {
-		read_data |= mFunction << i * AFR_BITS;
+		uint8_t shift = ( i - types::gpio::COUNT_PINS / 2 ) * AFR_BITS;
+		read_data |= mFunction << shift;
 	  }
 	}
 	gpio->AFR[1] = read_data;

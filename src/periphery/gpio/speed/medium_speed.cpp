@@ -6,12 +6,10 @@
 
 namespace kvadro::periphery::gpio::speed
 {
-
-void MediumSpeed::SetSpeed(GPIO_TypeDef *gpio, uint8_t pin, uint8_t speed) noexcept
-{
   static const int MEDIUM_SPEED = 0x01;
-  mSpeed = MEDIUM_SPEED;
-  GpioSpeed::SetSpeed(gpio, pin, mSpeed);
-}
 
+  MediumSpeed::MediumSpeed() :
+	  GpioSpeed( MEDIUM_SPEED )
+  {
+  }
 }

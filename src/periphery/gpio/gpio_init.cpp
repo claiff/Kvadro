@@ -17,7 +17,7 @@ namespace kvadro::periphery::gpio
 	gpio_mode->SetMode( gpio, group_pins );
 	output_type->SetOutputType( gpio, group_pins );
 	pull->SetPull( gpio, group_pins );
-	speed->SetSpeed( gpio, group_pins, 0 );
+	speed->SetSpeed( gpio, group_pins );
 	func->SetFunction( gpio, group_pins );
   }
 }

@@ -23,6 +23,7 @@ namespace kvadro::periphery::types
 	virtual void SetGpioI2C2Clock() const noexcept;
 	virtual void SetGpioI2C3Clock() const noexcept;
 	virtual void SetGpioUart1Clock() const noexcept;
+	virtual uint8_t GetClock() const noexcept = 0;
   };
   using IRCC_Ptr = std::shared_ptr<IRCC>;
 }

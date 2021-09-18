@@ -11,11 +11,9 @@ namespace kvadro::periphery::gpio::speed
   class HighSpeed : public periphery::types::gpio::GpioSpeed
   {
   public:
-	HighSpeed() = default;
+	HighSpeed();
+	HighSpeed( uint8_t speed );
 	~HighSpeed() override = default;
-
-	void SetSpeed( GPIO_TypeDef *gpio, uint8_t pin, uint8_t speed ) noexcept override;
-
   };
 
 }

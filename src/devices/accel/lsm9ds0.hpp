@@ -93,7 +93,7 @@ static const uint8_t INT1_CFG_G = 0x30;
 //TODO interrupts
 namespace kvadro::device::accel
 {
-  class LSM9DS0 : public IAccel
+  class LSM9DS0 : public types::IAccel
   {
   public:
 	explicit LSM9DS0( periphery::types::I2CPtr I2C ) :
