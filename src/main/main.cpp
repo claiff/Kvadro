@@ -1,10 +1,9 @@
-#include "main.hpp"
-#include "../periphery/i2c/i2c_max_speed.hpp"
-#include "../periphery/rcc/simple_rcc.hpp"
-#include "memory"
-#include "../periphery/uart/uart_gprs.hpp"
-#include "../devices/accel/lsm9ds0.hpp"
+#include <memory>
+
+#include "periphery/rcc/simple_rcc.hpp"
+#include "periphery/uart/uart_gprs.hpp"
 #include "devices/gps/gps_nmea.hpp"
+
 int main()
 {
   auto clock_control = std::make_shared<kvadro::periphery::SimpleRCC>();
