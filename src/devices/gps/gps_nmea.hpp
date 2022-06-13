@@ -6,8 +6,9 @@
 
 #include "headers/gprmc.hpp"
 
-namespace kvadro::device::gps
+namespace device::gps
 {
+	//TODO Нужно сделать registrator для наполнения хедерами
   class GPS_NMEA : public headers::GPRMC
   {
   public:

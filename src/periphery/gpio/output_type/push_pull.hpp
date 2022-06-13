@@ -5,7 +5,7 @@
 
 #include "periphery/types/gpio/gpio_output_type.hpp"
 
-namespace kvadro::periphery::gpio::output_type
+namespace periphery::gpio::output_type
 {
 
   class PushPullType : public periphery::types::gpio::GpioOutputType

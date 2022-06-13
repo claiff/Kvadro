@@ -8,7 +8,7 @@
 #include "parser.hpp"
 #include "gprmc.hpp"
 
-namespace kvadro::device::gps::headers
+namespace device::gps::headers
 {
   //
   // Constructors

@@ -17,7 +17,7 @@ class RadioControl
 @enduml
 */
 
-namespace kvadro::device
+namespace device
 {
     class RadioControl
     {

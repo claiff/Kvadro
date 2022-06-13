@@ -17,7 +17,7 @@ class PWM
 */
 #pragma once
 
-namespace kvadro::device
+namespace device
 {
     class PWM
     {

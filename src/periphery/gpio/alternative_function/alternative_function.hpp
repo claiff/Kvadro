@@ -8,7 +8,7 @@
 
 #include "periphery/types/gpio/gpio_general.hpp"
 
-namespace kvadro::periphery::gpio::alternative_func
+namespace periphery::gpio::alternative_func
 {
 
   class AlternativeFunction : public types::gpio::GpioGeneral

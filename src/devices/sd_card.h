@@ -13,7 +13,7 @@ class SdCard
 */
 #pragma once
 
-namespace kvadro::device
+namespace device
 {
     class SdCard
     {

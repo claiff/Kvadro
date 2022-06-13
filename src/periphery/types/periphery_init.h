@@ -7,7 +7,7 @@
 #include "memory"
 #include "../../main/stm32f407xx.h"
 
-namespace kvadro::periphery::types
+namespace periphery::types
 {
   static const int FUNC_BITS_SYS = 0x00;
   static const int FUNC_BITS_I2C = 0x04;

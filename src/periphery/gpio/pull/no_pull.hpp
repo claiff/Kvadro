@@ -5,7 +5,7 @@
 
 #include "periphery/types/gpio/gpio_pull.hpp"
 
-namespace kvadro::periphery::gpio::pull
+namespace periphery::gpio::pull
 {
 
   class PullNo : public types::gpio::GpioPull

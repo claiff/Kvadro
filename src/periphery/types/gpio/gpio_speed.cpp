@@ -4,7 +4,7 @@
 
 #include "gpio_speed.hpp"
 
-namespace kvadro::periphery::types::gpio
+namespace periphery::types::gpio
 {
   GpioSpeed::GpioSpeed( uint8_t speed ) :
 	  mSpeed( speed )

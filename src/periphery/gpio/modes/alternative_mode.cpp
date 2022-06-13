@@ -4,7 +4,7 @@
 
 #include "alternative_mode.hpp"
 
-namespace kvadro::periphery::gpio::mode
+namespace periphery::gpio::mode
 {
   static const int ALTERNATIVE_MODE = 0x02;
 

@@ -8,7 +8,7 @@
 
 #include "main/stm32f407xx.h"
 
-namespace kvadro::periphery::types
+namespace periphery::types
 {
   class IRCC
   {
@@ -25,7 +25,7 @@ namespace kvadro::periphery::types
 	virtual void SetGpioUart1Clock() const noexcept;
 	virtual uint8_t GetClock() const noexcept = 0;
   };
-  using IRCC_Ptr = std::shared_ptr<IRCC>;
+  using IRCC_Ptr = IRCC*;
 }
 
 

@@ -8,12 +8,12 @@
 #include "periphery/types/periphery_init.h"
 #include "periphery/types/ircc.hpp"
 
-namespace kvadro::periphery::i2c
+namespace periphery::i2c
 {
   class I2cMaxSpeed : public types::II2C
   {
   public:
-	explicit I2cMaxSpeed( I2C_TypeDef *i2c, kvadro::periphery::types::IRCC_Ptr rcc );
+	explicit I2cMaxSpeed( I2C_TypeDef *i2c, periphery::types::IRCC_Ptr rcc );
 	~I2cMaxSpeed() override = default;
 
 	void InitI2C() const noexcept;

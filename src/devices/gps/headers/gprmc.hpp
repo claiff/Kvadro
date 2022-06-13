@@ -7,7 +7,7 @@
 #include "types/iheader.hpp"
 #include "parser.hpp"
 
-namespace kvadro::device::gps::headers
+namespace device::gps::headers
 {
   struct COORDINATE
   {
@@ -27,7 +27,7 @@ namespace kvadro::device::gps::headers
 	uint8_t second;
   };
 
-  class GPRMC : public types::IHeader
+  class GPRMC : public types::IGpsHeader
   {
   public:
 	GPRMC();

@@ -3,7 +3,7 @@
 //
 #include "gpio_mode.hpp"
 
-namespace kvadro::periphery::types::gpio
+namespace periphery::types::gpio
 {
   GpioMode::GpioMode( uint8_t mode ) :
 	  mMode( mode )

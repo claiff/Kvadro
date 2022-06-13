@@ -4,7 +4,7 @@
 
 #include "lsm9ds0.hpp"
 
-namespace kvadro::device::accel
+namespace device::accel
 {
 
 bool LSM9DS0::IsAccelOnline() const noexcept

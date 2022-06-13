@@ -8,7 +8,7 @@
 
 #include "gpio_general.hpp"
 
-namespace kvadro::periphery::types::gpio
+namespace periphery::types::gpio
 {
   class GpioPull : public GpioGeneral
   {

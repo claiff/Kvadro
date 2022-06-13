@@ -4,7 +4,7 @@
 
 #include "open_drain.hpp"
 
-namespace kvadro::periphery::gpio::output_type
+namespace periphery::gpio::output_type
 {
   static const int OPEN_DRAIN_TYPE = 0x01;
   OpenDrainType::OpenDrainType() :

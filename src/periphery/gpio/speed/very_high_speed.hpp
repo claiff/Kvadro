@@ -5,7 +5,7 @@
 
 #include "periphery/types/gpio/gpio_speed.hpp"
 
-namespace kvadro::periphery::gpio::speed
+namespace periphery::gpio::speed
 {
 
   class VeryHighSpeed : public periphery::types::gpio::GpioSpeed

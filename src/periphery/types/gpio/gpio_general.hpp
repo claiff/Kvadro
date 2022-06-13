@@ -5,7 +5,7 @@
 
 #include "main/stm32f407xx.h"
 
-namespace kvadro::periphery::types::gpio
+namespace periphery::types::gpio
 {
   const static uint8_t COUNT_PINS = 16;
 

@@ -4,7 +4,7 @@
 
 #include "medium_speed.hpp"
 
-namespace kvadro::periphery::gpio::speed
+namespace periphery::gpio::speed
 {
   static const int MEDIUM_SPEED = 0x01;
 

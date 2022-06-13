@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace kvadro::periphery::types
+namespace periphery::types
 {
   class IUArt
   	{

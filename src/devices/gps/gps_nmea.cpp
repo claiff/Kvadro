@@ -6,7 +6,7 @@
 
 #include <algorithm>
 
-namespace kvadro::device::gps
+namespace device::gps
 {
 
 }

@@ -10,7 +10,7 @@
 #include "periphery/types/gpio/gpio_speed.hpp"
 #include "periphery/gpio/alternative_function/alternative_function.hpp"
 
-namespace kvadro::periphery::gpio
+namespace periphery::gpio
 {
 
   class GpioInit

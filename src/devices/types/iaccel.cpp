@@ -4,7 +4,7 @@
 
 #include "iaccel.hpp"
 
-namespace kvadro::device::types
+namespace device::types
 {
   IAccel::IAccel( periphery::types::I2CPtr i2c ) :
 	  mI2c( std::move( i2c ) )

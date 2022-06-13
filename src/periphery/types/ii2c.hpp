@@ -8,7 +8,7 @@
 
 #include "main/stm32f407xx.h"
 
-namespace kvadro::periphery::types
+namespace periphery::types
 {
   class II2C
   {

@@ -4,7 +4,7 @@
 
 #include "alternative_function.hpp"
 
-namespace kvadro::periphery::gpio::alternative_func
+namespace periphery::gpio::alternative_func
 {
 
   AlternativeFunction::AlternativeFunction( uint8_t function ) :

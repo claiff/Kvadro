@@ -8,7 +8,7 @@
 #include "periphery/types/ircc.hpp"
 #include "periphery/types/periphery_init.h"
 
-namespace kvadro::periphery::i2c
+namespace periphery::i2c
 {
 
 class I2C2Periphery : public types::PeripheryInit

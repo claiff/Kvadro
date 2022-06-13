@@ -9,7 +9,7 @@
 
 #include <utility>
 
-namespace kvadro::periphery::i2c
+namespace periphery::i2c
 {
 
 I2C1Periphery::I2C1Periphery(types::IRCC_Ptr rcc)

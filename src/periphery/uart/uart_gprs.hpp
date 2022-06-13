@@ -9,15 +9,14 @@
 #include "periphery/types/periphery_init.h"
 #include "devices/gps/gps_nmea.hpp"
 
-namespace kvadro::periphery::uart
+namespace periphery::uart
 {
-
   class UART_GPRS final
   {
   public:
-	UART_GPRS( USART_TypeDef *uart, kvadro::periphery::types::IRCC_Ptr const& rcc, std::shared_ptr<kvadro::device::gps::GPS_NMEA> const& gps );
+	UART_GPRS( USART_TypeDef *uart, periphery::types::IRCC_Ptr const& rcc, device::gps::headers::types::IGpsHeaderPtr gps  );
 	static UART_GPRS *mInstance;
-	std::shared_ptr<kvadro::device::gps::GPS_NMEA> mGps;
+	  device::gps::headers::types::IGpsHeaderPtr mGps;
   private:
 	void InitPeriphery();
 	void InitUART();

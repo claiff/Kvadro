@@ -6,7 +6,7 @@
 
 #include "periphery/types/ircc.hpp"
 
-namespace kvadro::periphery
+namespace periphery
 {
   class SimpleRCC : public types::IRCC
   {
