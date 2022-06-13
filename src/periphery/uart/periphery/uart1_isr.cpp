@@ -9,7 +9,7 @@
 #include "periphery/gpio/pull/pull_up.hpp"
 #include "periphery/gpio/pull/no_pull.hpp"
 
-namespace kvadro::periphery::uart
+namespace periphery::uart
 {
 
   UART1_ISR::UART1_ISR( types::IRCC_Ptr const& rcc ) :

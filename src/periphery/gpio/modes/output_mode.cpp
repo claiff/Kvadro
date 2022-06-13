@@ -4,7 +4,7 @@
 
 #include "output_mode.hpp"
 
-namespace kvadro::periphery::gpio::mode
+namespace periphery::gpio::mode
 {
 
 void OutputMode::SetMode(GPIO_TypeDef *gpio, uint16_t pin) noexcept

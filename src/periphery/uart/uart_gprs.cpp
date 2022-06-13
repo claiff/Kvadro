@@ -4,7 +4,7 @@
 #include "uart_gprs.hpp"
 #include "periphery/uart1_isr.hpp"
 
-namespace kvadro::periphery::uart
+namespace periphery::uart
 {
 #define UART_DIV_SAMPLING16( _PCLK_, _BAUD_ )            ((uint32_t)((((uint64_t)(_PCLK_))*25U)/(4U*((uint64_t)(_BAUD_)))))
 #define UART_DIVMANT_SAMPLING16( _PCLK_, _BAUD_ )        (UART_DIV_SAMPLING16((_PCLK_), (_BAUD_))/100U)
@@ -18,7 +18,8 @@ namespace kvadro::periphery::uart
 
   UART_GPRS *UART_GPRS::mInstance = nullptr;
 
-  UART_GPRS::UART_GPRS( USART_TypeDef *uart, kvadro::periphery::types::IRCC_Ptr const& rcc, std::shared_ptr<kvadro::device::gps::GPS_NMEA> const& gps ) :
+  UART_GPRS::UART_GPRS( USART_TypeDef *uart, periphery::types::IRCC_Ptr const& rcc,
+						device::gps::headers::types::IGpsHeaderPtr gps ) :
 	  mUart( uart ),
 	  mRcc( rcc ),
 	  mGps( gps )

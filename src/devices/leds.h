@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace kvadro::device
+namespace device
 {
 class Leds {};
 }

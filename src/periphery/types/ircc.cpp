@@ -4,7 +4,7 @@
 
 #include "ircc.hpp"
 
-namespace kvadro::periphery::types
+namespace periphery::types
 {
   void IRCC::SetGpioBClock() const noexcept
   {

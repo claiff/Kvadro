@@ -4,7 +4,7 @@
 
 #include "input_mode.hpp"
 
-namespace kvadro::periphery::gpio::mode
+namespace periphery::gpio::mode
 {
   static const int INPUT_MODE = 0x00;
 

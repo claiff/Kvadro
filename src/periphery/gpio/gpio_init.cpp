@@ -3,7 +3,7 @@
 //
 #include "gpio_init.hpp"
 
-namespace kvadro::periphery::gpio
+namespace periphery::gpio
 {
 
   void GpioInit::SetGpio( GPIO_TypeDef *gpio,

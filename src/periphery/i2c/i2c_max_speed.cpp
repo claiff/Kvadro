@@ -7,10 +7,10 @@
 #include "periphery/i2c2_periphery.hpp"
 #include "periphery/i2c3_periphery.hpp"
 
-namespace kvadro::periphery::i2c
+namespace periphery::i2c
 {
 
-I2cMaxSpeed::I2cMaxSpeed(I2C_TypeDef *i2c, kvadro::periphery::types::IRCC_Ptr rcc)
+I2cMaxSpeed::I2cMaxSpeed(I2C_TypeDef *i2c, periphery::types::IRCC_Ptr rcc)
     :  mI2c(i2c), mRcc(std::move(rcc))
 
 {

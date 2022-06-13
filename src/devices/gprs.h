@@ -14,7 +14,7 @@ class Baro
 
 #pragma once
 
-namespace kvadro::device
+namespace device
 {
     class gprs
     {

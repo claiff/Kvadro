@@ -7,7 +7,7 @@
 #include "periphery/gpio/speed/very_high_speed.hpp"
 #include "periphery/gpio/pull/pull_up.hpp"
 
-namespace kvadro::periphery::i2c
+namespace periphery::i2c
 {
 
 I2C3Periphery::I2C3Periphery(types::IRCC_Ptr rcc)

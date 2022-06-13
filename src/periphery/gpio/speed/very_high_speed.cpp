@@ -4,7 +4,7 @@
 
 #include "very_high_speed.hpp"
 
-namespace kvadro::periphery::gpio::speed
+namespace periphery::gpio::speed
 {
   static const int VERY_HIGH_SPEED = 0x03;
 

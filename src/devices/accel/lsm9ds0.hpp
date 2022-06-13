@@ -91,7 +91,7 @@ static const uint8_t OVR = 0x40;
 static const uint8_t EMPTY = 0x20;
 static const uint8_t INT1_CFG_G = 0x30;
 //TODO interrupts
-namespace kvadro::device::accel
+namespace device::accel
 {
   class LSM9DS0 : public types::IAccel
   {

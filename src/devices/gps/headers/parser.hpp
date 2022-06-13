@@ -8,7 +8,7 @@
 #include <vector>
 #include "types/iparser.hpp"
 
-namespace kvadro::device::gps::headers
+namespace device::gps::headers
 {
   class Parser : public types::IParser
   {

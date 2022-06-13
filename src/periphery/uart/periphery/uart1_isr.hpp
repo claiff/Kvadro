@@ -8,7 +8,7 @@
 #include "periphery/types/ircc.hpp"
 #include "periphery/types/periphery_init.h"
 
-namespace kvadro::periphery::uart
+namespace periphery::uart
 {
 
   class UART1_ISR : public types::PeripheryInit

@@ -6,13 +6,14 @@
 
 #include <cstdint>
 
-namespace kvadro::device::gps::headers::types
+namespace device::gps::headers::types
 {
-  class IHeader
+  class IGpsHeader
   {
   public:
-	virtual ~IHeader() = default;
+	virtual ~IGpsHeader() = default;
 
 	virtual void AddData( uint8_t data ) = 0;
   };
+  using IGpsHeaderPtr = IGpsHeader*;
 }

@@ -8,7 +8,7 @@
 static char const *const GPRMC_FIELD = "$GPRMC";
 static const int COUNT_FIELDS = 12;
 static constexpr uint8_t SIZE_FIELD = 2;
-namespace kvadro::device::gps::headers
+namespace device::gps::headers
 {
   //
   //Constructors

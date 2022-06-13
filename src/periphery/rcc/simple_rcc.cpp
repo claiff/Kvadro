@@ -4,7 +4,7 @@
 
 #include "simple_rcc.hpp"
 
-namespace kvadro::periphery
+namespace periphery
 {
   static int const DEFAULT_CLOCK = 168;
 

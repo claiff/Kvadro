@@ -20,7 +20,7 @@ enum class ACCEL_MODE
   LOW, MEDDIUM, HIGH
 };
 
-namespace kvadro::device::types
+namespace device::types
 {
   class IAccel
   {

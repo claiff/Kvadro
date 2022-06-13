@@ -4,7 +4,7 @@
 
 #pragma once
 
-namespace kvadro::device::gps::headers::types
+namespace device::gps::headers::types
 {
   static int const MINIMUM_DATA = 20;
   class IParser

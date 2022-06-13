@@ -4,7 +4,7 @@
 
 #include "pull_up.hpp"
 
-namespace kvadro::periphery::gpio::pull
+namespace periphery::gpio::pull
 {
 
 void PullUp::SetPull(GPIO_TypeDef *gpio, uint8_t pin) noexcept

@@ -4,7 +4,7 @@
 
 #include "push_pull.hpp"
 
-namespace kvadro::periphery::gpio::output_type
+namespace periphery::gpio::output_type
 {
   const int PUSH_PULL_TYPE = 0x00;
   PushPullType::PushPullType() :

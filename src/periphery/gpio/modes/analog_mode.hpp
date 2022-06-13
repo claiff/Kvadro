@@ -5,7 +5,7 @@
 
 #include "periphery/types/gpio/gpio_mode.hpp"
 
-namespace kvadro::periphery::gpio::mode
+namespace periphery::gpio::mode
 {
 
   class AnalogMode : public periphery::types::gpio::GpioMode
