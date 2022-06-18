@@ -14,7 +14,7 @@ namespace periphery::i2c
   class I2C1Periphery : public types::PeripheryInit
 {
 public:
-  explicit I2C1Periphery(types::IRCC_Ptr rcc);
+  explicit I2C1Periphery(types::IRCC_Ptr const& rcc);
   ~I2C1Periphery() override = default;
 
   void InitPeriphery() const noexcept override;

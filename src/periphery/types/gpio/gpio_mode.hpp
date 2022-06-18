@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <memory>
-
 #include "gpio_general.hpp"
 
 namespace periphery::types::gpio
@@ -20,5 +18,5 @@ namespace periphery::types::gpio
   protected:
 	uint8_t mMode;
   };
-  using GPIO_ModePtr = std::shared_ptr<GpioMode>;
+  using GPIO_ModePtr = GpioMode*;
 }

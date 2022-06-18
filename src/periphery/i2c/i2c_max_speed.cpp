@@ -16,17 +16,17 @@ I2cMaxSpeed::I2cMaxSpeed(I2C_TypeDef *i2c, periphery::types::IRCC_Ptr rcc)
 {
   if (mI2c == I2C1)
   {
-    mPeripheryInit = std::make_shared<I2C1Periphery>(mRcc);
+    mPeripheryInit = new I2C1Periphery(mRcc);
     mRcc->SetGpioI2C1Clock();
   }
   else if (mI2c == I2C2)
   {
-    mPeripheryInit = std::make_shared<I2C2Periphery>(mRcc);
+    mPeripheryInit = new I2C2Periphery(mRcc);
     mRcc->SetGpioI2C2Clock();
   }
   else if (mI2c == I2C3)
   {
-    mPeripheryInit = std::make_shared<I2C3Periphery>(mRcc);
+    mPeripheryInit = new I2C3Periphery(mRcc);
     mRcc->SetGpioI2C3Clock();
   }
   InitI2C();

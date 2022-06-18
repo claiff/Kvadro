@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <memory>
-
 #include "periphery/types/gpio/gpio_general.hpp"
 
 namespace periphery::gpio::alternative_func
@@ -22,5 +20,5 @@ namespace periphery::gpio::alternative_func
   private:
 	uint8_t mFunction;
   };
-  using AlternativeFunctionPtr = std::shared_ptr<AlternativeFunction>;
+  using AlternativeFunctionPtr = AlternativeFunction*;
 }

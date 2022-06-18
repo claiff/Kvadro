@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <memory>
-
 #include "gpio_general.hpp"
 
 namespace periphery::types::gpio
@@ -37,5 +35,5 @@ namespace periphery::types::gpio
   protected:
 	uint8_t mPull;
   };
-  using GpioPullPtr = std::shared_ptr<GpioPull>;
+  using GpioPullPtr = GpioPull*;
 }

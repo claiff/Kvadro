@@ -3,7 +3,8 @@
 !*.hpp
 !.gitignore
 !CMakeLists.txt
-!kvadro.ioc
+!*.ioc
 !STM32F407VGTx_FLASH.ld
 !docs/*
+!docs/*/*
 !misc/*

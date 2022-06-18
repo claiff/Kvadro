@@ -43,7 +43,7 @@ namespace periphery::uart
   {
 	if( mUart == USART1 )
 	{
-	  mPeripheryInit = std::make_shared<UART1_ISR>( mRcc );
+	  mPeripheryInit = new UART1_ISR( mRcc );
 	  mRcc->SetGpioUart1Clock();
 	}
   }
