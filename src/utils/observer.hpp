@@ -6,15 +6,15 @@
 
 #include <cstdint>
 
-namespace device::gps::headers::types
+namespace utils
 {
-	class IGpsHeader
+	class Observer
 	{
 	public:
-		virtual ~IGpsHeader() = default;
+		virtual ~Observer() = default;
 
 		virtual void AddData( uint8_t data ) = 0;
 	};
 
-	using IGpsHeaderPtr = IGpsHeader*;
+	using IObserverPtr = Observer*;
 }

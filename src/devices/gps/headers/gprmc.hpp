@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "types/iheader.hpp"
+#include "utils/observer.hpp"
 #include "parser.hpp"
 
 namespace device::gps::headers
@@ -28,7 +28,7 @@ namespace device::gps::headers
 	};
 
 	class GPRMC
-			: public types::IGpsHeader
+			: public utils::Observer
 	{
 	public:
 		GPRMC();

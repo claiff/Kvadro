@@ -8,6 +8,7 @@
 #include "periphery/types/ircc.hpp"
 #include "periphery/types/periphery_init.h"
 #include "devices/gps/gps_nmea.hpp"
+#include "utils/observer.hpp"
 
 namespace periphery::uart
 {
@@ -15,9 +16,9 @@ namespace periphery::uart
 	{
 	public:
 		UART_GPRS( USART_TypeDef* uart, periphery::types::IRCC_Ptr const& rcc,
-				   device::gps::headers::types::IGpsHeaderPtr gps );
+				   std::vector < utils::IObserverPtr > const& registrator );
 		static UART_GPRS* mInstance;
-		device::gps::headers::types::IGpsHeaderPtr mGps;
+		std::vector < utils::IObserverPtr > mRegistrator;
 	private:
 		void InitPeriphery();
 		void InitUART();

@@ -19,11 +19,11 @@ namespace periphery::uart
 	UART_GPRS* UART_GPRS::mInstance = nullptr;
 
 	UART_GPRS::UART_GPRS( USART_TypeDef* uart, periphery::types::IRCC_Ptr const& rcc,
-						  device::gps::headers::types::IGpsHeaderPtr gps )
+						  std::vector < utils::IObserverPtr > const& registrator )
 			:
 			mUart( uart )
 			, mRcc( rcc )
-			, mGps( gps )
+			, mRegistrator( registrator )
 	{
 		InitPeriphery();
 		InitUART();
@@ -32,8 +32,13 @@ namespace periphery::uart
 
 	extern "C" void USART1_IRQHandler()
 	{
-		UART_GPRS::mInstance->mGps->AddData(USART1->DR );
+		auto& registrator = UART_GPRS::mInstance->mRegistrator;
+		auto data = USART1->DR;
 		USART1->SR &= ~USART_SR_RXNE;
+		for( auto& observer: registrator )
+		{
+			observer->AddData( data );
+		}
 	}
 
 	//
