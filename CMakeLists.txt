@@ -21,7 +21,7 @@ set( CMAKE_C_STANDARD 11 )
 add_compile_options( -mcpu=cortex-m4 -mthumb -mthumb-interwork )
 add_compile_options( -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 )
 
-add_compile_options( -O2 )
+add_compile_options( -O0 )
 add_definitions( -DUSE_HAL_DRIVER -DSTM32F407xx )
 
 set( DEFAULT_HEADERS 17 )

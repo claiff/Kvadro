@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <memory>
-
 #include "gpio_general.hpp"
 
 namespace periphery::types::gpio
@@ -21,5 +19,5 @@ namespace periphery::types::gpio
 
 	uint8_t mOutputType;
   };
-  using GpioOutputTypePtr = std::shared_ptr<GpioOutputType>;
+  using GpioOutputTypePtr = GpioOutputType*;
 }

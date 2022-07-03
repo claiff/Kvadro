@@ -15,7 +15,7 @@ namespace periphery::uart
   {
   public:
 	UART_GPRS( USART_TypeDef *uart, periphery::types::IRCC_Ptr const& rcc, device::gps::headers::types::IGpsHeaderPtr gps  );
-	static UART_GPRS *mInstance;
+	  static UART_GPRS* mInstance;
 	  device::gps::headers::types::IGpsHeaderPtr mGps;
   private:
 	void InitPeriphery();

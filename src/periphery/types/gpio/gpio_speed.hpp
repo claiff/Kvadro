@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <memory>
-
 #include "gpio_general.hpp"
 
 namespace periphery::types::gpio
@@ -21,5 +19,5 @@ namespace periphery::types::gpio
   protected:
 	uint8_t mSpeed;
   };
-  using GpioSpeedPtr = std::shared_ptr<GpioSpeed>;
+  using GpioSpeedPtr = GpioSpeed*;
 }
