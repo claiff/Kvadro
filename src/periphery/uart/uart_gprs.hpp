@@ -11,20 +11,21 @@
 
 namespace periphery::uart
 {
-  class UART_GPRS final
-  {
-  public:
-	UART_GPRS( USART_TypeDef *uart, periphery::types::IRCC_Ptr const& rcc, device::gps::headers::types::IGpsHeaderPtr gps  );
-	  static UART_GPRS* mInstance;
-	  device::gps::headers::types::IGpsHeaderPtr mGps;
-  private:
-	void InitPeriphery();
-	void InitUART();
-	uint32_t GetBRR( uint32_t baud_rate );
+	class UART_GPRS final
+	{
+	public:
+		UART_GPRS( USART_TypeDef* uart, periphery::types::IRCC_Ptr const& rcc,
+				   device::gps::headers::types::IGpsHeaderPtr gps );
+		static UART_GPRS* mInstance;
+		device::gps::headers::types::IGpsHeaderPtr mGps;
+	private:
+		void InitPeriphery();
+		void InitUART();
+		uint32_t GetBRR( uint32_t baud_rate );
 
-	USART_TypeDef *mUart;
-	types::IRCC_Ptr mRcc;
-	types::PeripheryInitPtr mPeripheryInit;
-  };
+		USART_TypeDef* mUart;
+		types::IRCC_Ptr mRcc;
+		types::PeripheryInitPtr mPeripheryInit;
+	};
 }
 

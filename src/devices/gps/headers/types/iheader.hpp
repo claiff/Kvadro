@@ -8,12 +8,13 @@
 
 namespace device::gps::headers::types
 {
-  class IGpsHeader
-  {
-  public:
-	virtual ~IGpsHeader() = default;
+	class IGpsHeader
+	{
+	public:
+		virtual ~IGpsHeader() = default;
 
-	virtual void AddData( uint8_t data ) = 0;
-  };
-  using IGpsHeaderPtr = IGpsHeader*;
+		virtual void AddData( uint8_t data ) = 0;
+	};
+
+	using IGpsHeaderPtr = IGpsHeader*;
 }
